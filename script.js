@@ -86,6 +86,9 @@ function createMenuItem(item) {
     const contentDiv = document.createElement('div');
     contentDiv.className = 'menu-item-content';
     
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'menu-item-info';
+    
     const title = document.createElement('h4');
     title.textContent = item.name;
     
@@ -96,10 +99,12 @@ function createMenuItem(item) {
     price.className = 'price';
     price.textContent = `$${item.price.toFixed(2)}`;
     
-    contentDiv.appendChild(title);
+    infoDiv.appendChild(title);
     if (item.description) {
-        contentDiv.appendChild(description);
+        infoDiv.appendChild(description);
     }
+    
+    contentDiv.appendChild(infoDiv);
     contentDiv.appendChild(price);
     menuItem.appendChild(contentDiv);
     
@@ -112,7 +117,7 @@ function createMenuItem(item) {
             optionElement.textContent = `${option}: +$${optionPrice.toFixed(2)}`;
             optionsDiv.appendChild(optionElement);
         });
-        contentDiv.appendChild(optionsDiv);
+        infoDiv.appendChild(optionsDiv);
     }
     
     // Try to load an image for this menu item (will only add container if image exists)

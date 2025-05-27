@@ -1,9 +1,9 @@
 /* 
    East Side Diner - Retro 50's Theme
-   Classic American Diner Design
+   Classic Canadian Diner Design
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@300;400;600;700&family=Bungee&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@300;400;600;700&family=Bungee&family=Righteous&family=Lobster&family=Pacifico&family=Dancing+Script:wght@400;700&family=Satisfy&display=swap');
 
 /* Base styling */
 * {
@@ -13,19 +13,21 @@
 }
 
 :root {
-    --primary-red: #FF2D2D;
-    --secondary-red: #CC1E1E;
-    --cream: #FFF5E6;
+    --primary-red: #DC143C;
+    --secondary-red: #B22222;
+    --cream: #FFF8DC;
+    --vintage-yellow: #F4A460;
     --chrome: #C0C0C0;
     --dark-chrome: #808080;
     --black: #1A1A1A;
     --white: #FFFFFF;
-    --mint-green: #7FFFD4;
-    --yellow: #FFD700;
-    --pink: #FFB6C1;
-    --blue: #4A90E2;
+    --mint-green: #98FB98;
+    --diner-blue: #4169E1;
+    --retro-pink: #FF69B4;
     --shadow: rgba(0, 0, 0, 0.3);
-    --neon-glow: rgba(255, 45, 45, 0.6);
+    --neon-glow: rgba(220, 20, 60, 0.8);
+    --vintage-brown: #8B4513;
+    --paper-white: #FFFEF7;
 }
 
 body {
@@ -69,19 +71,26 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo h1 {
     font-family: 'Bungee', cursive;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--white);
     text-shadow: 
         0 0 10px var(--neon-glow),
         0 0 20px var(--neon-glow),
         0 0 30px var(--neon-glow);
     letter-spacing: 2px;
+    margin: 0;
 }
 
 .nav-links {
@@ -157,7 +166,25 @@ nav {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--shadow);
+    text-align: center;
     border: 4px solid var(--chrome);
+}
+
+.hero-logo {
+    margin-bottom: 2rem;
+}
+
+.hero-logo-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px var(--shadow));
+    transition: all 0.3s ease;
+}
+
+.hero-logo-image:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 6px 12px var(--shadow));
 }
 
 .hero-content h2 {
@@ -256,8 +283,9 @@ section {
 
 /* Menu Section */
 .menu {
-    background: var(--white);
+    background: var(--paper-white);
     position: relative;
+    padding: 6rem 0;
 }
 
 .menu::before {
@@ -267,8 +295,11 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="20" height="20" fill="%23f0f0f0"/><rect x="20" y="20" width="20" height="20" fill="%23f0f0f0"/></svg>');
-    opacity: 0.3;
+    background: 
+        radial-gradient(circle at 20px 20px, var(--cream) 2px, transparent 2px),
+        radial-gradient(circle at 60px 60px, var(--vintage-yellow) 1px, transparent 1px);
+    background-size: 40px 40px, 80px 80px;
+    opacity: 0.4;
 }
 
 .menu .container {
@@ -277,117 +308,405 @@ section {
 }
 
 .menu h2 {
-    font-family: 'Righteous', cursive;
-    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: var(--primary-red);
-    text-shadow: 2px 2px 4px var(--shadow);
+    text-shadow: 
+        3px 3px 0px var(--vintage-yellow),
+        6px 6px 0px var(--shadow);
+    font-weight: 700;
+    transform: rotate(-2deg);
 }
 
+/* Retro Menu Board Style */
 .menu-section {
-    margin-bottom: 4rem;
-    background: var(--cream);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px var(--shadow);
-    border: 3px solid var(--chrome);
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, var(--cream) 0%, var(--paper-white) 50%, var(--cream) 100%);
+    padding: 2.5rem;
+    border-radius: 0;
+    box-shadow: 
+        inset 0 0 0 8px var(--vintage-brown),
+        inset 0 0 0 12px var(--vintage-yellow),
+        inset 0 0 0 16px var(--vintage-brown),
+        0 8px 30px var(--shadow);
+    border: 4px solid var(--vintage-brown);
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-section::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px dashed var(--vintage-brown);
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Add vintage corner decorations */
+.menu-section h3::before {
+    content: '◆';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-red);
+}
+
+.menu-section h3::after {
+    content: '◆';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-red);
 }
 
 .menu-section h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 2.2rem;
+    font-family: 'Lobster', cursive;
+    font-size: 2.8rem;
     color: var(--primary-red);
     text-align: center;
     margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: var(--white);
-    padding: 1rem;
-    border-radius: 15px;
-    border: 2px solid var(--chrome);
+    text-transform: none;
+    letter-spacing: 2px;
+    background: var(--vintage-yellow);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: 3px solid var(--vintage-brown);
+    box-shadow: 
+        0 4px 0 var(--vintage-brown),
+        0 8px 15px var(--shadow);
     position: relative;
+    transform: rotate(-1deg);
+    text-shadow: 2px 2px 0px var(--paper-white);
+}
+
+/* Vintage ribbon banner for special items */
+.menu-item.featured::before {
+    content: 'SPECIAL!';
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    background: var(--primary-red);
+    color: var(--paper-white);
+    padding: 2px 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    transform: rotate(15deg);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px var(--shadow);
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+    z-index: 10;
 }
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 0;
 }
 
+/* Authentic 1950s Menu Item Style */
 .menu-item {
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px var(--shadow);
-    border: 2px solid var(--chrome);
+    background: transparent;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 2px dotted var(--vintage-brown);
+    box-shadow: none;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    display: block;
 }
 
-.menu-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(45deg, var(--primary-red), var(--yellow), var(--mint-green));
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:nth-child(odd) {
+    background: rgba(244, 164, 96, 0.1);
+    margin: 0 -1rem;
+    padding: 1rem;
+    border-radius: 0;
 }
 
 .menu-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px var(--shadow);
+    background: rgba(220, 20, 60, 0.08);
+    transform: none;
+    box-shadow: none;
+    border-bottom-color: var(--primary-red);
+}
+
+.menu-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.menu-item-info {
+    flex: 1;
+    padding-right: 1rem;
 }
 
 .menu-item h4 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.3rem;
-    color: var(--black);
-    margin-bottom: 0.5rem;
-    text-transform: capitalize;
+    font-family: 'Satisfy', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-red);
+    margin-bottom: 0.3rem;
+    text-transform: none;
+    line-height: 1.2;
+    font-weight: 400;
+    display: block;
 }
 
 .menu-item p {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    line-height: 1.5;
+    color: var(--black);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    font-style: italic;
+    opacity: 0.8;
+    display: block;
+    max-width: calc(100% - 120px);
 }
 
+/* Vintage Price Tag Style */
 .menu-item .price {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.4rem;
-    color: var(--primary-red);
-    font-weight: bold;
-    float: right;
-    background: var(--yellow);
-    padding: 5px 15px;
-    border-radius: 20px;
-    box-shadow: 0 3px 10px var(--shadow);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: var(--vintage-brown);
+    font-weight: 700;
+    background: var(--vintage-yellow);
+    padding: 8px 16px;
+    border-radius: 0;
+    box-shadow: 
+        0 0 0 3px var(--vintage-brown),
+        0 3px 0 3px var(--vintage-brown),
+        0 6px 10px var(--shadow);
+    position: relative;
+    transform: rotate(3deg);
+    border: 2px solid var(--vintage-brown);
+    z-index: 5;
+    flex-shrink: 0;
+    align-self: flex-start;
 }
 
-/* Menu Item Image Styles */
-.menu-item-image {
+.menu-item .price::before {
+    content: '$';
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    background: var(--primary-red);
+    color: var(--paper-white);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 2px solid var(--vintage-brown);
+}
+
+.menu-item .price::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid var(--vintage-brown);
+    border-bottom: 8px solid transparent;
+}
+
+/* Menu Options Styling */
+.menu-options {
+    margin-top: 0.8rem;
     width: 100%;
-    height: 120px;
+}
+
+.menu-options small {
+    display: block;
+    color: var(--vintage-brown);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+}
+
+/* Vintage menu divider lines */
+.menu-section h3 + .menu-grid::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: 
+        repeating-linear-gradient(
+            to right,
+            var(--vintage-brown) 0px,
+            var(--vintage-brown) 10px,
+            transparent 10px,
+            transparent 15px
+        );
     margin-bottom: 1rem;
-    border-radius: 10px;
+}
+
+/* Vintage menu typography enhancement */
+.menu-item h4::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: 
+        repeating-linear-gradient(
+            to right,
+            var(--vintage-brown) 0px,
+            var(--vintage-brown) 3px,
+            transparent 3px,
+            transparent 8px
+        );
+    margin: 0 0.5rem;
+    align-self: flex-end;
+    margin-bottom: 8px;
+}
+
+.menu-item .menu-item-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0;
+    width: 100%;
+}
+
+.menu-item .menu-item-content h4 {
+    display: flex;
+    align-items: baseline;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Ensure proper spacing and layout for menu items */
+.menu-item {
+    display: block;
+    width: 100%;
+}
+
+.menu-item .menu-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+/* Alternating vintage badges for sections */
+.menu-section:nth-child(1)::after {
+    content: '★ FRESH DAILY ★';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--vintage-yellow);
+    color: var(--vintage-brown);
+    padding: 4px 16px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 2px solid var(--vintage-brown);
+    border-radius: 20px;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.menu-section:nth-child(2)::after {
+    content: '◆ HOUSE SPECIAL ◆';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--mint-green);
+    color: var(--vintage-brown);
+    padding: 4px 16px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 2px solid var(--vintage-brown);
+    border-radius: 20px;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.menu-section:nth-child(3)::after {
+    content: '♦ CHEF\'S CHOICE ♦';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--retro-pink);
+    color: var(--vintage-brown);
+    padding: 4px 16px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 2px solid var(--vintage-brown);
+    border-radius: 20px;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.menu-section:nth-child(4)::after {
+    content: '★ TRADITIONAL ★';
+    position: absolute;
+    top: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--diner-blue);
+    color: var(--paper-white);
+    padding: 4px 16px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 2px solid var(--vintage-brown);
+    border-radius: 20px;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+/* Menu Item Image Styles - Retro Photo Frame */
+.menu-item-image {
+    width: 120px;
+    height: 90px;
+    margin: 0 0 0 1rem;
+    border-radius: 8px;
     overflow: hidden;
-    background: linear-gradient(45deg, var(--light-gray), var(--chrome));
+    background: var(--vintage-yellow);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-shrink: 0;
+    border: 3px solid var(--vintage-brown);
+    box-shadow: 
+        0 0 0 2px var(--paper-white),
+        0 4px 8px var(--shadow);
+    transform: rotate(-2deg);
 }
 
 .menu-item-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 4px;
     transition: transform 0.3s ease;
+    filter: sepia(10%) contrast(1.1) brightness(1.05);
 }
 
 .menu-item.has-image .menu-item-photo:hover {
@@ -395,32 +714,100 @@ section {
 }
 
 .menu-item.has-image {
-    /* Additional styling for items with images */
-    padding-top: 1rem;
+    padding: 1.2rem 0;
 }
 
-/* Retro photo frame effect for menu images */
+.menu-item.has-image .menu-item-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.menu-item.has-image h4,
+.menu-item.has-image p {
+    max-width: calc(100% - 140px);
+}
+
+/* Vintage polaroid photo frame effect */
 .menu-item-image::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, var(--chrome), var(--yellow), var(--chrome));
-    border-radius: 12px;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -12px;
+    background: var(--paper-white);
+    border-radius: 8px;
     z-index: -1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.menu-item-image::after {
+    content: '★';
+    position: absolute;
+    bottom: -8px;
+    right: 8px;
+    color: var(--primary-red);
+    font-size: 0.8rem;
+    z-index: 2;
 }
 
 /* Mobile responsive adjustments for images */
 @media (max-width: 768px) {
-    .menu-item-image {
-        height: 100px;
-        margin-bottom: 0.75rem;
+    .menu-item-content {
+        flex-direction: column;
+        align-items: stretch;
     }
     
-    .menu-item-photo {
-        border-radius: 8px;
+    .menu-item-info {
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .menu-item p {
+        max-width: 100%;
+    }
+    
+    .menu-item .price {
+        align-self: center;
+        transform: rotate(1deg);
+        font-size: 1.8rem;
+        padding: 6px 12px;
+    }
+    
+    .menu-item-image {
+        width: 80px;
+        height: 60px;
+        margin: 0 0 0 0.5rem;
+    }
+    
+    .menu-item.has-image h4,
+    .menu-item.has-image p {
+        max-width: calc(100% - 100px);
+    }
+    
+    .menu-item h4 {
+        font-size: 1.5rem;
+    }
+    
+    .menu-section h3 {
+        font-size: 2.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .menu h2 {
+        font-size: 3.5rem;
+    }
+    
+    .menu-item {
+        padding: 0.8rem 0;
+        margin: 0 -0.8rem;
+    }
+    
+    .menu-item:nth-child(odd) {
+        margin: 0 -0.8rem;
+        padding: 0.8rem;
     }
 }
 
@@ -486,16 +873,17 @@ section {
     font-size: 1.2rem;
 }
 
-/* Features Section */
-.features {
-    background: var(--white);
+/* Facebook Feed Section */
+.facebook-feed {
+    background: linear-gradient(135deg, var(--cream), var(--paper-white));
     background-image: 
-        radial-gradient(circle at 20% 80%, var(--pink) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, var(--yellow) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, var(--retro-pink) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, var(--vintage-yellow) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, var(--mint-green) 0%, transparent 50%);
+    position: relative;
 }
 
-.features h2 {
+.facebook-feed h2 {
     font-family: 'Righteous', cursive;
     font-size: 3rem;
     text-align: center;
@@ -504,60 +892,127 @@ section {
     text-shadow: 2px 2px 4px var(--shadow);
 }
 
-.features-grid {
+.facebook-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    justify-items: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.feature {
+.facebook-plugin-wrapper {
     background: var(--white);
     padding: 2rem;
     border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    border: 4px solid var(--chrome);
     text-align: center;
-    box-shadow: 0 8px 25px var(--shadow);
-    border: 3px solid var(--chrome);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
-.feature::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255,45,45,0.1), transparent);
-    transition: transform 0.5s;
-    transform: rotate(45deg) translate(-100%, -100%);
+.facebook-info {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    border: 4px solid var(--chrome);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.feature:hover::before {
-    transform: rotate(45deg) translate(0, 0);
-}
-
-.feature:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px var(--shadow);
-}
-
-.feature h3 {
+.facebook-info h3 {
     font-family: 'Fredoka One', cursive;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--primary-red);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
-    position: relative;
-    z-index: 2;
+    letter-spacing: 1px;
 }
 
-.feature p {
-    font-size: 1.1rem;
+.facebook-info p {
+    font-size: 1.2rem;
     line-height: 1.6;
-    position: relative;
-    z-index: 2;
+    margin-bottom: 2rem;
+    color: var(--black);
+}
+
+.facebook-btn {
+    background: linear-gradient(45deg, #4267B2, #365899);
+    color: var(--white);
+    border: 3px solid var(--white);
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+}
+
+.facebook-btn:hover {
+    background: linear-gradient(45deg, #365899, #4267B2);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(66, 103, 178, 0.4);
+}
+
+/* Facebook widget responsive adjustments */
+.fb-page {
+    width: 100% !important;
+}
+
+.fb-page span {
+    width: 100% !important;
+}
+
+.fb-page iframe {
+    width: 100% !important;
+}
+
+/* Responsive design for Facebook section */
+@media (max-width: 1024px) {
+    .facebook-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        justify-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .facebook-feed h2 {
+        font-size: 2.5rem;
+    }
+    
+    .facebook-plugin-wrapper,
+    .facebook-info {
+        padding: 1.5rem;
+    }
+    
+    .facebook-info h3 {
+        font-size: 1.8rem;
+    }
+    
+    .facebook-info p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .facebook-feed h2 {
+        font-size: 2rem;
+    }
+    
+    .facebook-plugin-wrapper,
+    .facebook-info {
+        padding: 1rem;
+    }
+    
+    .facebook-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .facebook-info p {
+        font-size: 1rem;
+    }
 }
 
 /* Contact Section */
@@ -682,6 +1137,10 @@ footer p {
         display: flex;
     }
     
+    nav {
+        padding: 0.5rem 1rem;
+    }
+    
     .nav-links {
         display: none;
         position: absolute;
@@ -706,7 +1165,7 @@ footer p {
         font-size: 1.1rem;
     }
     
-    .section-title, .menu h2, .about h2, .features h2, .contact h2 {
+    .section-title, .menu h2, .about h2, .facebook-feed h2, .contact h2 {
         font-size: 2.2rem;
     }
     
@@ -721,15 +1180,19 @@ footer p {
     .info-grid {
         grid-template-columns: 1fr;
     }
-    
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 480px) {
     .logo h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+    
+    nav {
+        padding: 0.3rem 0.5rem;
+    }
+    
+    .hero-logo-image {
+        max-width: 300px;
     }
     
     .hero-content h2 {
@@ -740,11 +1203,133 @@ footer p {
         padding: 1.5rem;
     }
     
-    .section-title, .menu h2, .about h2, .features h2, .contact h2 {
+    .section-title, .menu h2, .about h2, .facebook-feed h2, .contact h2 {
         font-size: 1.8rem;
     }
     
     .menu-section h3 {
         font-size: 1.8rem;
+    }
+}
+
+/* Map Container Styles */
+.map-container {
+    position: relative;
+    margin-top: 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+    border: 4px solid var(--chrome);
+    background: var(--white);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    display: block;
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.map-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.location-info {
+    background: rgba(255, 248, 220, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 3px solid var(--primary-red);
+    box-shadow: 0 8px 25px var(--shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.location-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px var(--shadow);
+    background: rgba(255, 248, 220, 1);
+}
+
+.location-info h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.location-info p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    color: var(--black);
+    margin: 0.3rem 0;
+    line-height: 1.4;
+}
+
+.view-on-maps {
+    font-family: 'Fredoka One', cursive;
+    color: var(--primary-red) !important;
+    font-weight: bold;
+    font-size: 1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.8rem !important;
+    transition: all 0.3s ease;
+}
+
+.map-link:hover .view-on-maps {
+    color: var(--secondary-red) !important;
+    text-shadow: 1px 1px 2px var(--shadow);
+}
+
+/* Responsive map styles */
+@media (max-width: 768px) {
+    .map-container iframe {
+        height: 300px;
+    }
+    
+    .map-overlay {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+    
+    .location-info {
+        padding: 1rem;
+    }
+    
+    .location-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .location-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container iframe {
+        height: 250px;
+    }
+    
+    .location-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .location-info p {
+        font-size: 0.9rem;
     }
 }
