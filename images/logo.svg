@@ -1,0 +1,29 @@
+<svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF2D2D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#CC1E1E;stop-opacity:1" />
+    </linearGradient>
+    <filter id="logoGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="50" r="45" fill="url(#logoGradient)" filter="url(#logoGlow)"/>
+  
+  <!-- Chrome border -->
+  <circle cx="100" cy="50" r="42" fill="none" stroke="#C0C0C0" stroke-width="2"/>
+  
+  <!-- Main text -->
+  <text x="100" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">EAST</text>
+  <text x="100" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">SIDE</text>
+  
+  <!-- Small stars decoration -->
+  <polygon points="85,25 87,31 93,31 88,35 90,41 85,37 80,41 82,35 77,31 83,31" fill="#FFD700"/>
+  <polygon points="115,25 117,31 123,31 118,35 120,41 115,37 110,41 112,35 107,31 113,31" fill="#FFD700"/>
+</svg>

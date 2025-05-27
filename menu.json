@@ -1,0 +1,144 @@
+{
+  "restaurant": "East Side Diner",
+  "address": "286 East Main Street, Welland, Ontario",
+  "phone": "(289) 820-8638",
+  "sections": {
+    "The Platters": [
+      {
+        "name": "Big Bopper",
+        "description": "3 Eggs, bacon, sausage, 1 fresh cut home fries, and toast; with your choice of 2 pancakes or 2 french toast.",
+        "price": 13.95
+      },
+      {
+        "name": "Eggs Benedict",
+        "description": "2 Poached eggs with peameal bacon on an english muffin topped with Hollandaise sauce and served with home fries.",
+        "price": 13.95
+      },
+      {
+        "name": "Eggs Florentine",
+        "description": "2 Poached eggs with spinach on an english muffin, topped with Hollandaise sauce and served with fresh cut home fries.",
+        "price": 12.95
+      },
+      {
+        "name": "Breakfast Poutine",
+        "description": "Fresh cut home fries topped with chopped bacon, sausage, mushrooms, 2 eggs any style. Smothered with Hollandaise sauce. Served with toast.",
+        "price": 13.95
+      },
+      {
+        "name": "Little Richard",
+        "description": "2 Eggs, choice of bacon, sausage, or ham. Served with fresh cut home fries and toast; plus your choice of 1 pancake or 1 french toast.",
+        "price": 10.95
+      },
+      {
+        "name": "Big Breakfast",
+        "description": "2 Eggs, 2 slices of bacon, 2 sausage, and baked beans. Served with fresh cut home fries and toast.",
+        "price": 10.95
+      }
+    ],
+    "Omelettes": [
+      {
+        "name": "Meatlovers",
+        "description": "Sausage, bacon, ham, and cheese.",
+        "price": 13.95
+      },
+      {
+        "name": "Greek",
+        "description": "Feta cheese, onion, peppers, tomatoes, and black olives.",
+        "price": 13.95
+      },
+      {
+        "name": "Florentine",
+        "description": "Feta cheese and spinach.",
+        "price": 11.95
+      },
+      {
+        "name": "Western",
+        "description": "Ham, onion, and peppers.",
+        "price": 12.95
+      },
+      {
+        "name": "Veggie",
+        "description": "Onion, peppers, tomatoes, and mushrooms.",
+        "price": 10.95
+      },
+      {
+        "name": "Bacon or Ham with Cheese",
+        "description": "",
+        "price": 12.95
+      },
+      {
+        "name": "Mexican Omelette",
+        "description": "Onions, hot peppers, tomatoes and cheese, topped with salsa.",
+        "price": 12.95
+      },
+      {
+        "name": "Cheese Omelette",
+        "description": "",
+        "price": 9.95
+      },
+      {
+        "name": "Plain Omelette",
+        "description": "",
+        "price": 7.95
+      }
+    ],
+    "Cruisin' on the Sweet Side": [
+      {
+        "name": "Three Stooges",
+        "description": "3 Slices of french toast.",
+        "price": 7.95
+      },
+      {
+        "name": "Fats Domino",
+        "description": "3 Buttermilk pancakes.",
+        "price": 7.95,
+        "options": {
+          "add blueberries or chocolate chips": 1.00
+        }
+      },
+      {
+        "name": "Plain Belgian Waffle",
+        "description": "",
+        "price": 7.95
+      },
+      {
+        "name": "Tutti Fruiti",
+        "description": "Texas style french toast stuffed with strawberries, strawberry cream cheese, and whipped cream.",
+        "price": 9.95
+      },
+      {
+        "name": "Bo-Diddley",
+        "description": "Belgian waffle topped with strawberries and whipped cream.",
+        "price": 9.95
+      },
+      {
+        "name": "Sausage Dippers (4 pieces)",
+        "description": "",
+        "price": 7.95
+      },
+      {
+        "name": "Apple Cinnamon French Toast",
+        "description": "3 Slices of cinnamon french toast topped with warm apples and cinnamon buttercream icing.",
+        "price": 9.95
+      }
+    ],
+    "The Classics": [
+      {
+        "name": "2 Eggs with Peameal, Home Fries, and Toast",
+        "price": 12.95
+      },
+      {
+        "name": "2 Eggs with Choice of Bacon, Ham, or Sausage, Served with Home Fries and Toast",
+        "price": 8.95
+      },
+      {
+        "name": "2 Eggs with Toast",
+        "price": 5.25
+      },
+      {
+        "name": "2 Eggs with Home Fries and Toast",
+        "price": 6.25
+      }
+    ]
+  }
+}

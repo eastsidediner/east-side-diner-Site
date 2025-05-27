@@ -1,0 +1,750 @@
+/* 
+   East Side Diner - Retro 50's Theme
+   Classic American Diner Design
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@300;400;600;700&family=Bungee&family=Righteous&display=swap');
+
+/* Base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #FF2D2D;
+    --secondary-red: #CC1E1E;
+    --cream: #FFF5E6;
+    --chrome: #C0C0C0;
+    --dark-chrome: #808080;
+    --black: #1A1A1A;
+    --white: #FFFFFF;
+    --mint-green: #7FFFD4;
+    --yellow: #FFD700;
+    --pink: #FFB6C1;
+    --blue: #4A90E2;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --neon-glow: rgba(255, 45, 45, 0.6);
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+    background: var(--cream);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header and Navigation */
+header {
+    background: linear-gradient(135deg, var(--primary-red), var(--secondary-red));
+    box-shadow: 0 4px 20px var(--shadow);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 4px solid var(--chrome);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.logo h1 {
+    font-family: 'Bungee', cursive;
+    font-size: 2.5rem;
+    color: var(--white);
+    text-shadow: 
+        0 0 10px var(--neon-glow),
+        0 0 20px var(--neon-glow),
+        0 0 30px var(--neon-glow);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: var(--white);
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links li a:hover {
+    background: var(--white);
+    color: var(--primary-red);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 80px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><rect width="30" height="30" fill="%23000"/><rect x="30" y="30" width="30" height="30" fill="%23000"/></svg>');
+    opacity: 0.1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    border: 4px solid var(--chrome);
+}
+
+.hero-content h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 3.5rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px var(--shadow);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+/* Retro Button Styles */
+.btn, .cta-button {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--primary-red), var(--secondary-red));
+    color: var(--white);
+    padding: 15px 35px;
+    border-radius: 30px;
+    border: 3px solid var(--white);
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px var(--shadow);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover, .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px var(--shadow);
+    background: linear-gradient(45deg, var(--secondary-red), var(--primary-red));
+}
+
+.btn::before, .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before, .cta-button:hover::before {
+    left: 100%;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #8b4513;
+    color: #8b4513;
+}
+
+.btn-outline:hover {
+    background-color: #8b4513;
+    color: white;
+}
+
+section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-red);
+    text-shadow: 2px 2px 4px var(--shadow);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(45deg, var(--primary-red), var(--yellow));
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+/* Menu Section */
+.menu {
+    background: var(--white);
+    position: relative;
+}
+
+.menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="20" height="20" fill="%23f0f0f0"/><rect x="20" y="20" width="20" height="20" fill="%23f0f0f0"/></svg>');
+    opacity: 0.3;
+}
+
+.menu .container {
+    position: relative;
+    z-index: 2;
+}
+
+.menu h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-red);
+    text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.menu-section {
+    margin-bottom: 4rem;
+    background: var(--cream);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+    border: 3px solid var(--chrome);
+}
+
+.menu-section h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.2rem;
+    color: var(--primary-red);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 15px;
+    border: 2px solid var(--chrome);
+    position: relative;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow);
+    border: 2px solid var(--chrome);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, var(--primary-red), var(--yellow), var(--mint-green));
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow);
+}
+
+.menu-item h4 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.menu-item p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.menu-item .price {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.4rem;
+    color: var(--primary-red);
+    font-weight: bold;
+    float: right;
+    background: var(--yellow);
+    padding: 5px 15px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px var(--shadow);
+}
+
+/* Menu Item Image Styles */
+.menu-item-image {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(45deg, var(--light-gray), var(--chrome));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.menu-item-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item.has-image .menu-item-photo:hover {
+    transform: scale(1.05);
+}
+
+.menu-item.has-image {
+    /* Additional styling for items with images */
+    padding-top: 1rem;
+}
+
+/* Retro photo frame effect for menu images */
+.menu-item-image::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--chrome), var(--yellow), var(--chrome));
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Mobile responsive adjustments for images */
+@media (max-width: 768px) {
+    .menu-item-image {
+        height: 100px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .menu-item-photo {
+        border-radius: 8px;
+    }
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(135deg, var(--mint-green), var(--blue));
+    color: var(--black);
+}
+
+.about h2 {
+    color: var(--white);
+    text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.about-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    border: 3px solid var(--chrome);
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.hours-info {
+    margin-top: 3rem;
+}
+
+.hours-info h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    color: var(--primary-red);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-item {
+    background: var(--cream);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 2px solid var(--chrome);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.info-item h4 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Features Section */
+.features {
+    background: var(--white);
+    background-image: 
+        radial-gradient(circle at 20% 80%, var(--pink) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, var(--yellow) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, var(--mint-green) 0%, transparent 50%);
+}
+
+.features h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-red);
+    text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px var(--shadow);
+    border: 3px solid var(--chrome);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,45,45,0.1), transparent);
+    transition: transform 0.5s;
+    transform: rotate(45deg) translate(-100%, -100%);
+}
+
+.feature:hover::before {
+    transform: rotate(45deg) translate(0, 0);
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px var(--shadow);
+}
+
+.feature h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+.feature p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, var(--primary-red), var(--secondary-red));
+    color: var(--white);
+}
+
+.contact h2 {
+    color: var(--white);
+    text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-details, .contact-form {
+    background: var(--white);
+    color: var(--black);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    border: 3px solid var(--chrome);
+}
+
+.contact-details h3, .contact-form h3 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.contact-details p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    padding: 12px 16px;
+    border: 2px solid var(--chrome);
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: var(--cream);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 10px rgba(255, 45, 45, 0.3);
+}
+
+.contact-form button {
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 4px solid var(--chrome);
+}
+
+footer p {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* Animation for loading */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.menu-item:nth-child(1) { animation-delay: 0.1s; }
+.menu-item:nth-child(2) { animation-delay: 0.2s; }
+.menu-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Neon effect for special elements */
+.neon-text {
+    text-shadow: 
+        0 0 5px var(--neon-glow),
+        0 0 10px var(--neon-glow),
+        0 0 15px var(--neon-glow),
+        0 0 20px var(--neon-glow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-red);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 4px 10px var(--shadow);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title, .menu h2, .about h2, .features h2, .contact h2 {
+        font-size: 2.2rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        padding: 1.5rem;
+    }
+    
+    .section-title, .menu h2, .about h2, .features h2, .contact h2 {
+        font-size: 1.8rem;
+    }
+    
+    .menu-section h3 {
+        font-size: 1.8rem;
+    }
+}
