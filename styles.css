@@ -883,6 +883,18 @@ section {
     position: relative;
 }
 
+.facebook-feed::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><rect width="30" height="30" fill="%23000"/><rect x="30" y="30" width="30" height="30" fill="%23000"/></svg>');
+    opacity: 0.1;
+    z-index: 1;
+}
+
 .facebook-feed h2 {
     font-family: 'Righteous', cursive;
     font-size: 3rem;
@@ -890,6 +902,8 @@ section {
     margin-bottom: 3rem;
     color: var(--primary-red);
     text-shadow: 2px 2px 4px var(--shadow);
+    position: relative;
+    z-index: 2;
 }
 
 .facebook-container {
@@ -900,6 +914,8 @@ section {
     justify-items: center;
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .facebook-plugin-wrapper {
