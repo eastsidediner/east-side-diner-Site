@@ -875,11 +875,10 @@ section {
 
 /* Facebook Feed Section */
 .facebook-feed {
-    background: linear-gradient(135deg, var(--cream), var(--paper-white));
-    background-image: 
-        radial-gradient(circle at 20% 80%, var(--retro-pink) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, var(--vintage-yellow) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, var(--mint-green) 0%, transparent 50%);
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
 }
 
