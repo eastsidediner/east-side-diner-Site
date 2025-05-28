@@ -892,7 +892,6 @@ section {
     bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><rect width="30" height="30" fill="%23000"/><rect x="30" y="30" width="30" height="30" fill="%23000"/></svg>');
     opacity: 0.1;
-    z-index: 1;
 }
 
 .facebook-feed h2 {
