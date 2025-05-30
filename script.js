@@ -90,7 +90,10 @@ function createMenuItem(item) {
     infoDiv.className = 'menu-item-info';
     
     const title = document.createElement('h4');
-    title.textContent = item.name;
+    const titleText = document.createElement('span');
+    titleText.className = 'title-text';
+    titleText.textContent = item.name;
+    title.appendChild(titleText);
     
     const description = document.createElement('p');
     description.textContent = item.description || '';
@@ -144,13 +147,11 @@ function loadMenuItemImage(itemName, menuItem) {
     
     // Handle successful image load
     img.onload = function() {
-        // Image exists - create container and add image
-        const imageContainer = document.createElement('div');
-        imageContainer.className = 'menu-item-image';
-        imageContainer.appendChild(img);
-        
-        // Insert image container at the beginning of menu item
-        menuItem.insertBefore(imageContainer, menuItem.firstChild);
+        // Image exists - add image to title row
+        const titleElement = menuItem.querySelector('h4');
+        if (titleElement) {
+            titleElement.appendChild(img);
+        }
         menuItem.classList.add('has-image');
     };
     
