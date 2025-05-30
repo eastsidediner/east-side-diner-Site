@@ -422,6 +422,8 @@ section {
     transition: all 0.3s ease;
     position: relative;
     display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .menu-item:last-child {
@@ -430,9 +432,13 @@ section {
 
 .menu-item:nth-child(odd) {
     background: rgba(244, 164, 96, 0.1);
-    margin: 0 -1rem;
-    padding: 1rem;
+    margin: 0 -2.5rem;
+    padding: 1rem 2.5rem;
     border-radius: 0;
+}
+
+.menu-item:nth-child(even) {
+    background: transparent;
 }
 
 .menu-item:hover {
@@ -464,6 +470,9 @@ section {
     line-height: 1.2;
     font-weight: 400;
     display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .menu-item p {
@@ -475,6 +484,9 @@ section {
     opacity: 0.8;
     display: block;
     max-width: calc(100% - 120px);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Vintage Price Tag Style */
@@ -758,37 +770,59 @@ section {
     .menu-item-content {
         flex-direction: column;
         align-items: stretch;
+        gap: 1rem;
     }
     
     .menu-item-info {
         padding-right: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
+        width: 100%;
     }
     
     .menu-item p {
         max-width: 100%;
+        word-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.5;
     }
     
     .menu-item .price {
-        align-self: center;
+        align-self: flex-start;
         transform: rotate(1deg);
         font-size: 1.8rem;
         padding: 6px 12px;
+        margin-top: 0.5rem;
     }
     
     .menu-item-image {
         width: 80px;
         height: 60px;
         margin: 0 0 0 0.5rem;
+        align-self: flex-start;
+        order: -1;
+    }
+    
+    .menu-item.has-image .menu-item-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .menu-item.has-image .menu-item-info {
+        flex: 1;
+        margin-bottom: 0;
     }
     
     .menu-item.has-image h4,
     .menu-item.has-image p {
-        max-width: calc(100% - 100px);
+        max-width: 100%;
     }
     
     .menu-item h4 {
         font-size: 1.5rem;
+        line-height: 1.3;
+        word-wrap: break-word;
+        hyphens: auto;
     }
     
     .menu-section h3 {
@@ -801,13 +835,21 @@ section {
     }
     
     .menu-item {
-        padding: 0.8rem 0;
-        margin: 0 -0.8rem;
+        padding: 1rem 0.8rem;
+        margin: 0 -1rem;
+        background: transparent !important;
     }
     
     .menu-item:nth-child(odd) {
-        margin: 0 -0.8rem;
-        padding: 0.8rem;
+        background: rgba(244, 164, 96, 0.1) !important;
+        margin: 0 -1rem;
+        padding: 1rem 0.8rem;
+    }
+    
+    .menu-item:nth-child(even) {
+        background: transparent !important;
+        margin: 0 -1rem;
+        padding: 1rem 0.8rem;
     }
 }
 
@@ -1146,6 +1188,21 @@ footer p {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .menu-section {
+        padding: 2.2rem;
+    }
+    
+    .menu-item h4 {
+        font-size: 1.7rem;
+    }
+    
+    .menu-item p {
+        font-size: 1rem;
+        max-width: calc(100% - 110px);
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -1223,6 +1280,80 @@ footer p {
     
     .menu-section h3 {
         font-size: 1.8rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .menu-section {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .menu-item {
+        padding: 0.8rem;
+        margin: 0 -1.5rem 0.5rem -1.5rem;
+        background: transparent !important;
+        border-bottom: 1px dotted var(--vintage-brown);
+    }
+    
+    .menu-item:nth-child(odd) {
+        background: rgba(244, 164, 96, 0.15) !important;
+        margin: 0 -1.5rem 0.5rem -1.5rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 0;
+    }
+    
+    .menu-item:nth-child(even) {
+        background: transparent !important;
+        margin: 0 -1.5rem 0.5rem -1.5rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .menu-item-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+    
+    .menu-item h4 {
+        font-size: 1.4rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+    
+    .menu-item p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        margin-bottom: 0.8rem;
+    }
+    
+    .menu-item .price {
+        align-self: flex-start;
+        font-size: 1.6rem;
+        padding: 5px 10px;
+        margin-top: 0;
+    }
+    
+    .menu-item.has-image .menu-item-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .menu-item-image {
+        width: 70px;
+        height: 55px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+    
+    .menu-options small {
+        font-size: 0.85rem;
+        line-height: 1.3;
     }
 }
 
